@@ -1,0 +1,13 @@
+<%= render 'home/nav' %>
+
+<div class="mt-5 pt-5 text-center">
+ <h1>New item</h1>
+
+<%= render "form", item: @item %>
+
+<br>
+
+<div>
+  <%= link_to "Back to items", items_path, class: "text-decoration-none" %>
+</div>
+</div>

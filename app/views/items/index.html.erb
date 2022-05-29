@@ -1,0 +1,52 @@
+<%= render 'home/nav'%>
+<p style="color: green"><%= notice %></p>
+
+
+<div class="group-number mb- d-flex px-3 bg-white justify-content-between">
+  <p>Number of payments</p>
+  <p><%= @items.count %></p>
+</div>
+
+<div class="pt-4 px-3">
+  <h1>Items</h1>
+  <div id="items">
+    <% running_total = 0 %>
+    
+    <% @items.each do |item| %>
+    <% if item.user == current_user %>
+    <div class="card mb-3">
+  
+      <div class="card-body  row align-items-center">
+        <div class="d-flex col-9 ">
+          <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+          <p class="px-3 p-md-3 align-self-center">
+        
+         <div class="d-flex flex-column">
+           <p><%= item.name %></p>
+           <p class="d-block"><%= item.created_at.strftime("%d %b %Y") %> </p>
+           </p>
+          </div>
+        </div>
+
+        <div class="col-3 text-end">
+          <p>$<%=item.amount %></p>
+          <%= button_to "Delete", item, method: :delete, class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <% running_total = running_total + (item.amount.to_i) %>
+    <% end %>
+    <% end %>
+    <div class="group-number mb- d-flex px-3 bg-white justify-content-between">
+      <p>Number of payments</p>
+      <p><%= number_to_currency(running_total) %></p>
+    </div>
+
+
+
+
+  <%= link_to "New item", new_item_path, class:"btn mx-3 mt-2 m-1 m-md-5 px-5 fixed-bottom green text-white text-center" %>
+

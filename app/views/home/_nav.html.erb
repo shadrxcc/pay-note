@@ -1,0 +1,21 @@
+<header class="fixed-top py-4">
+  <div class="d-flex justify-content-between">
+    <%= link_to root_path do %>
+      <i class="iconify ms-5 text-white fs-4" data-icon="eva:menu-outline"></i>
+    <% end %>
+
+    <%= link_to 'Paynote', root_path, class:"navbar-brand text-white fw-bold fs-3 logo fw-bold"%>
+
+    <i class="iconify fs-4 me-5 text-white" data-icon="ant-design:search-outlined"></i>
+  </div>
+
+  <div class="d-flex justify-content-between mt-3 px-3 px-md-5 mx-md-5 align-items-center">
+    <%= link_to 'My Payments',  items_path, class: "text-decoration-none text-light" %>
+
+    <%= link_to 'Miscellaneous', uncategorized_items_path, class: "text-decoration-none text-light" %>
+
+    <%= link_to 'All Payments', groups_path, class: "text-decoration-none text-light" %>
+
+
+  </div>
+</header>

@@ -1,0 +1,44 @@
+<div class= "user-profile">
+<p>
+  
+</p>
+<div class="container">
+  <ul class="nav d-flex flex-column list-unstyled pt-4">
+      <li>
+       <i class="iconify text-white fs-4" data-icon="ci:list-check"></i>
+        <%= link_to 'My Payments',  items_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="bx:cloud-download"></i>
+        <%= link_to 'Miscellaneous', uncategorized_items_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="carbon:categories"></i>
+        <%= link_to 'All Payments', groups_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="healthicons:ui-user-profile-outline"></i>
+        <%= link_to 'Manage Profile', edit_user_registration_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="uit:signout"></i>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "ps-3 ft text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+  </ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>

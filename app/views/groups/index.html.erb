@@ -1,0 +1,48 @@
+<%= render 'home/nav'%>
+
+<p style="color: green"><%= notice %></p>
+
+
+<div class="group-number mb- d-flex px-3 bg-white justify-content-between">
+  <p>Number of payments</p>
+  <p><%= @groups.count %></p>
+</div>
+
+
+<div class="pt-4 px-3">
+  <h1>Groups</h1>
+  <div id="groups">
+    
+    <% @groups.each do |group| %>
+    <% if group.user == current_user %>
+
+   <div class="card mb-3">
+  
+      <div class="card-body  row align-items-center">
+        <div class="d-flex col-9 ">
+          <div>
+             
+              </div> 
+          <p class="px-3 p-md-3 align-self-center">
+        
+         <div class="d-flex flex-column">
+           <p><%= link_to group.name, group_path(group.id) %></p>
+           <p class="d-block"><%= group.created_at.strftime("%d %b %Y") %> </p>
+           </p>
+          </div>
+        </div>
+
+        <div class="col-3 text-end">
+          <p>
+          <%= button_to "Destroy this group", @group, method: :delete, class: "bg-primary border-0 text-white p-2 rounded" %>
+          </p>
+        </div>
+      
+      </div>
+     <% end %>
+     <% end %>
+    </div>
+  </div>
+
+  <%= link_to "New group", new_group_path, class:"btn fixed-bottom mx-3 mt-2 m-1 m-md-5 px-5 text-center green text-white"%>
+</div>
