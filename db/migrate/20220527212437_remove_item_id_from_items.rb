@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveItemIdFromItems < ActiveRecord::Migration[7.0]
   def change
     remove_column :items, :item_id, :integer

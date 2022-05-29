@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :items, except: [:show, :edit, :update] do
+  resources :items, except: %i[show edit update] do
     get :uncategorized, on: :collection
   end
   resources :groups
