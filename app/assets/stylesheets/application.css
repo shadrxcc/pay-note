@@ -13,31 +13,31 @@
  *= require_tree .
  *= require_self
  */
-  .user-profile {
-      background-color: #3979c3;
-      height: 100vh;
-  }
+.user-profile {
+  background-color: #3979c3;
+  height: 100vh;
+}
 
-  .submit-btn {
-    background-color: #3979c3;
-  }
+.submit-btn {
+  background-color: #3979c3;
+}
 
-   header {
-    background-color: #3979c3;
-  }
+header {
+  background-color: #3979c3;
+}
 
-  body {
-    box-sizing: border-box;
-    overflow-x: hidden;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
 
-  .group-number {
-      position: relative;
-      top: 70px;
-  }
+.group-number {
+  position: relative;
+  top: 70px;
+}
 
-  .green {
-      background-color: #5fb523;
-  }
+.green {
+  background-color: #5fb523;
+}
