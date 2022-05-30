@@ -41,3 +41,8 @@ body {
 .green {
   background-color: #5fb523;
 }
+
+.group-image {
+  width: 200px;
+  height: 200px;
+}

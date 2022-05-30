@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = current_user.items.includes(:group).order('created_at DESC')
   end
 
   # GET /items/1 or /items/1.json
@@ -28,6 +28,11 @@ class ItemsController < ApplicationController
       format.html { render :new, status: :unprocessable_entity }
       format.json { render json: @item.errors, status: :unprocessable_entity }
     end
+  end
+
+  def uncategorized
+    @uncategorized = current_user.items.where(group_id: nil).all.order('created_at DESC')
+    @amount_sum = current_user.items.sum(:amount)
   end
 
   # PATCH/PUT /items/1 or /items/1.json

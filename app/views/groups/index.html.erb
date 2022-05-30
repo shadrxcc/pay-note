@@ -16,25 +16,20 @@
     <% @groups.each do |group| %>
     <% if group.user == current_user %>
 
-   <div class="card mb-3">
+   <div class="border mb-3">
   
-      <div class="card-body  row align-items-center">
-        <div class="d-flex col-9 ">
-          <div>
-             
-              </div> 
-          <p class="px-3 p-md-3 align-self-center">
-        
-         <div class="d-flex flex-column">
-           <p><%= link_to group.name, group_path(group.id) %></p>
-           <p class="d-block"><%= group.created_at.strftime("%d %b %Y") %> </p>
-           </p>
-          </div>
-        </div>
+      <div class="- row align-items-center">
+        <div class="d-flex col-9">
+        <%= image_tag group.image_url.to_s, class: "group-image" %>
+        <p class="px-3 p-md-3 align-self-center">
+        <strong class="d-block mb-4 mb-md-5"> <%= link_to group.name, group, class:"capitalize"%> </strong>
+        <strong class="d-block"><%= group.created_at.strftime("%d %b %Y") %> </strong>
+        </p>
+      </div>
 
         <div class="col-3 text-end">
           <p>
-          <%= button_to "Destroy this group", @group, method: :delete, class: "bg-primary border-0 text-white p-2 rounded" %>
+          <%= button_to "Destroy this group", @group, method: :delete, class: "bg-primary border-0 text-white p-2 me-2 rounded" %>
           </p>
         </div>
       

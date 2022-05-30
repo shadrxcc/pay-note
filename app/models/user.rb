@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :groups
   has_many :items
   has_one_attached :avatar
+  mount_uploader :image
 end

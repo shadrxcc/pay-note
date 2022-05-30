@@ -26,7 +26,7 @@
   <div class= "control_group mt-2 ">
     <%= form.label :group, class: "control-group mb-2"%>
     <div class= "controls">
-    <%= collection_select( :item, :group_id, Group.all, :id, :name, {}, { :multiple => false } )%>
+    <%= collection_select( :item, :group_id, Group.all, :id, :name, {:prompt=> 'choose a category'}, { :multiple => false } )%>
     </div>
     </div>
   
