@@ -18,7 +18,11 @@
   
       <div class="card-body  row align-items-center">
         <div class="d-flex col-9 ">
-          <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+          <% if item.group_id %>
+           <%= image_tag item.group.image_url, class: "group-image" %>
+        <% else %>
+            <img src="https://via.placeholder.com/100" alt="icon" class="border border-1 item-icon "> 
+        <% end %> 
           <p class="px-3 p-md-3 align-self-center">
         
          <div class="d-flex flex-column">

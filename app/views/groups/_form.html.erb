@@ -24,6 +24,10 @@
   </div>
 
   <div>
+    <%= form.number_field :user_id, id: :group_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+  </div>
+
+  <div>
     <%= form.submit class:"btn mt-2 m-1 m-md-5 text-white px-5 fixed-bottom green" %>
   </div>
 <% end %>

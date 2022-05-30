@@ -5,13 +5,14 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups.all.order('name ASC')
   end
 
   # GET /groups/1 or /groups/1.json
   def show
+    @user = User.find(current_user.id)
     @group = Group.find(params[:id])
-    @items = current_user.items.where('group_id =?', @group).all.order('created_at DESC')
+    @items = current_user.items.where('group_id =?', @groups).all.order('created_at DESC')
   end
 
   # GET /groups/new
@@ -70,6 +71,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :icon, :user_id, :avatar, :image)
+    params.require(:group).permit(:name, :image, :user_id)
   end
 end
