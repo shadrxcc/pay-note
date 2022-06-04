@@ -1,0 +1,47 @@
+<div class= "user-profile">
+
+<div class="d-flex align-items-center pt-4 mb-2">  
+<%= image_tag current_user.image_url.to_s, class: "group-image rounded-circle m-auto" %>
+</div>
+<h3 class="text-white fw-bold text-center"><%= @user.username %></h3>
+
+<div class="container">
+  <ul class="nav d-flex flex-column list-unstyled pt-4">
+      <li>
+       <i class="iconify text-white fs-4" data-icon="fluent:payment-16-regular"></i>
+        <%= link_to 'My Payments',  items_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="carbon:tag-group"></i>
+        <%= link_to 'Miscellaneous', uncategorized_items_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="ri:bar-chart-grouped-line"></i>
+        <%= link_to 'All Payments', groups_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="healthicons:ui-user-profile-outline"></i>
+        <%= link_to 'Manage Profile', edit_user_registration_path, class: "ps-3 text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+      <li class="">
+        <i class="iconify text-white fs-4" data-icon="uit:signout"></i>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "ps-3 ft text-decoration-none text-light" %>
+        <p class="ms-5 border-bottom pt-2"></p>
+      </li>
+  </ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>

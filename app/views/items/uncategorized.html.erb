@@ -1,0 +1,44 @@
+<%= render 'home/nav'%>
+
+<p style="color: green"><%= notice %></p>
+<div class="pt-5 px-3 mt-5">
+
+<div class="bg-white pt-5 d-flex justify-content-between p-1">
+  <p>Total Miscellaneous: </p>
+  <%= @uncategorized.count %>
+</div>
+
+<div class="bg-white d-flex justify-content-between p-1 mb-1">
+  <p>Total Amount: </p>
+  <p><b>$<%= @amount_sum %></b></p>
+</div>
+</div>
+
+<div class="px-3 pt-2">
+  <% running_total = 0 %>
+  <div class="pb-3">
+    <div>
+      <% @uncategorized.each do |uncategorized| %>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="d-flex">
+            <div>
+              <img src="https://via.placeholder.com/120" class="img-thumbnail">
+            </div>
+            <div class="ms-3 mt-3">
+              <p class="py-3"><%= uncategorized.name %></p>
+              <span class="text"><%= uncategorized.created_at.strftime("%d %b %Y") %></span>
+            </div>
+          </div>
+          <div class="text-end">
+            <p class="py-3"><b>$<%= uncategorized.amount %></b></p>
+          <div>
+          <div>
+            <%= link_to 'Remove Item', uncategorized, method: :delete, class: "btn btn-devise text-light btn-sm" %>
+          </div>
+        </div>
+        </div>
+      </div><br>
+    <% end %>
+</div>
+
+ <%= link_to "New item", new_item_path, class:"btn mx-3 mt-2 m-1 m-md-5 px-5 fixed-bottom green text-white text-center" %>
