@@ -6,9 +6,6 @@
 - Ruby v3.0.2
 - Ruby on Rails v7.0.3
 
-## Live link
-[View]( https://shadrxcc.github.io/pay-note/)
-
 ## Getting Started
 
 ### To get a local copy up and running follow these simple example steps:
